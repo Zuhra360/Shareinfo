@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { Box } from "@mantine/core";
+import { useState } from "react";
 import challenge from "../../../../../../assets/images/Navbar/challenge.png";
 import arrow2 from "../../../../../../assets/images/Navbar/arrow2.png";
 import datacheck from "../../../../../../assets/images/Navbar/data_check.png";
@@ -8,7 +9,7 @@ import calendar1 from "../../../../../../assets/images/Navbar/calendar1.png";
 import calendar2 from "../../../../../../assets/images/Navbar/calendar2.png";
 import calendar3 from "../../../../../../assets/images/Navbar/calendar3.png";
 import createnew from "../../../../../../assets/images/Topbar/createnew.png";
-import { Box } from "@mantine/core";
+
 
 
 export const TopBar = ( {changePage} ) => {
