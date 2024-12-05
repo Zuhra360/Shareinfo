@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import challenge from "../../../../../../assets/images/Navbar/challenge.png";
 import arrow2 from "../../../../../../assets/images/Navbar/arrow2.png";
@@ -13,9 +13,8 @@ import { Box } from "@mantine/core";
 
 
 export const TopBar = ( {changePage} ) => {
-    const navigate = useNavigate();
-    
-    const [activeButton, setActiveButton] = useState('');
+
+    const [activeButton, setActiveButton] = useState(null);
      
   return (
     <div className='w-full h-auto bg-[#141518]'>
@@ -42,23 +41,23 @@ export const TopBar = ( {changePage} ) => {
         <Box className='w-full h-[60px] border-b-[1px] py-[15px] px-[20px] flex items-center  flex-row gap-[10px]'>
             <button onClick={() =>{
               changePage('PracticeHome')
-              setActiveButton(page)}} className={`w-[172px] h-[30px] py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] flex items-center flex-row gap-[5px] bg-[#23262B] ${
-          activeButton === 'PracticeHome' ? 'bg-[#23262B] opacity-100' : 'bg-[#23262B] opacity-50'}`}>
+              setActiveButton(1)}} className={`w-[172px] h-[30px] py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] flex items-center flex-row gap-[5px] bg-[#23262B] ${
+          activeButton === 1 ? 'bg-[#23262B] opacity-100' : 'bg-[#23262B] opacity-50'}`}>
                 <img src={calendar1} className='w-[20px] h-[20px] '/>
                 <label className='w-[127px] h-[16px] font-[Nunito] font-bold text-[12px] leading-[16px] text-white'>Manage Practice Tasks</label>
             </button>
             <button  onClick={() =>{ changePage('Submissions')
-              setActiveButton(page)
+              setActiveButton(2)
             }} className={`w-[115px] h-[30px] py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] flex items-center flex-row gap-[5px] bg-[#23262B] ${
-          activeButton === 'Submissions' ? 'bg-[#23262B] opacity-100' : 'bg-[#23262B] opacity-50'
+          activeButton === 2 ? 'bg-[#23262B] opacity-100' : 'bg-[#23262B] opacity-50'
         }`}>
                 <img src={calendar2} className='w-[20px] h-[20px] '/>
                 <label className='w-[70px] h-[16px] font-[Nunito] font-bold text-[12px] leading-[16px] text-white'>Submissions</label>
             </button>
             <button onClick={() => {changePage('Practicewise')
-               setActiveButton(page)
+               setActiveButton(3)
             }}  className={`w-[116px] h-[30px] py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] flex items-center flex-row gap-[5px] bg-[#23262B] ${
-          activeButton === 'Submissions' ? 'bg-[#23262B] opacity-100' : 'bg-[#23262B] opacity-50'
+          activeButton === 3 ? 'bg-[#23262B] opacity-100' : 'bg-[#23262B] opacity-50'
         }`}>
                 <img src={calendar3} className='w-[20px] h-[20px] '/>
                 <label className='w-[71px] h-[16px] font-[Nunito] font-bold text-[12px] leading-[16px] text-white'>Leaderboard</label>

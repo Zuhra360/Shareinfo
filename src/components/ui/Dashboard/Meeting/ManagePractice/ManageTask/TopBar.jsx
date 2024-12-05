@@ -12,7 +12,7 @@ import { Box } from "@mantine/core";
 
 
 export const TopBar = ( {changePage} ) => {
-   
+    const [activeButton, setActiveButton] = useState(null);
   return (
     <div className='w-[1430px] h-auto  bg-[#141518]'>
         <Box className='w-full h-[50px] border-b-[0.5px] py-[10px] flex items-center justify-between flex-row gap-[10px]'>
@@ -40,15 +40,26 @@ export const TopBar = ( {changePage} ) => {
         </Box>
 
         <Box className='w-full h-[60px] border-b-[1px] py-[15px] px-[20px] flex items-center  flex-row gap-[10px]'>
-            <button onClick={() => changePage('PracticeHome')} className='w-[172px] h-[30px] py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] flex items-center flex-row gap-[5px] bg-[#23262B] '>
+            <button onClick={() =>{
+              changePage('PracticeHome')
+              setActiveButton(1)}} className={`w-[172px] h-[30px] py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] flex items-center flex-row gap-[5px] bg-[#23262B] ${
+          activeButton === 1 ? 'bg-[#23262B] opacity-100' : 'bg-[#23262B] opacity-50'}`}>
                 <img src={calendar1} className='w-[20px] h-[20px] '/>
                 <label className='w-[127px] h-[16px] font-[Nunito] font-bold text-[12px] leading-[16px] text-white'>Manage Practice Tasks</label>
             </button>
-            <button  onClick={() => changePage('Submissions')} className='w-[115px] h-[30px] py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] flex items-center flex-row gap-[5px] bg-[#23262B] '>
+            <button  onClick={() =>{ changePage('Submissions')
+              setActiveButton(2)
+            }} className={`w-[115px] h-[30px] py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] flex items-center flex-row gap-[5px] bg-[#23262B] ${
+          activeButton === 2 ? 'bg-[#23262B] opacity-100' : 'bg-[#23262B] opacity-50'
+        }`}>
                 <img src={calendar2} className='w-[20px] h-[20px] '/>
                 <label className='w-[70px] h-[16px] font-[Nunito] font-bold text-[12px] leading-[16px] text-white'>Submissions</label>
             </button>
-            <button onClick={() => changePage('Practicewise')}  className='w-[116px] h-[30px] py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] flex items-center flex-row gap-[5px] bg-[#23262B] '>
+            <button onClick={() => {changePage('Practicewise')
+               setActiveButton(3)
+            }}  className={`w-[116px] h-[30px] py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] flex items-center flex-row gap-[5px] bg-[#23262B] ${
+          activeButton === 3 ? 'bg-[#23262B] opacity-100' : 'bg-[#23262B] opacity-50'
+        }`}>
                 <img src={calendar3} className='w-[20px] h-[20px] '/>
                 <label className='w-[71px] h-[16px] font-[Nunito] font-bold text-[12px] leading-[16px] text-white'>Leaderboard</label>
             </button>

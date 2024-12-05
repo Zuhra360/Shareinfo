@@ -1,54 +1,87 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Logout } from "../../components/ui/Dashboard/Logout/Logout";
-import { Home } from "../../components/ui/Dashboard/Home/Home";
-import { UserSharing } from "../../components/ui/Dashboard/UserSharing/UserSharing";
-import { Mentoring } from "../../components/ui/Dashboard/Mentoring/Mentoring";
-import { Meeting } from "../../components/ui/Dashboard/Meeting/Meeting";
-import { Employee } from "../../components/ui/Dashboard/Employee/Employee";
-import { Settings } from "../../components/ui/Dashboard/Settings/Settings";
-import { Dashboard } from "../../components/pages/Dashboard";
-import { Login } from "../../components/pages/Login";
-import { PracticeHome } from "../../components/ui/Dashboard/Meeting/NewAdding/PracticeHome/PracticeHome";
-import { Submissions } from "../../components/ui/Dashboard/Meeting/Submissions/SubmissionPage/Submissions";
+import React, { Suspense, lazy } from "react";
+import Loader from './Loader';
 
 
+const Logout = lazy(() => import("../../components/ui/Dashboard/Logout/Logout"));
+const Home = lazy(() => import("../../components/ui/Dashboard/Home/Home"));
+const UserSharing = lazy(() => import("../../components/ui/Dashboard/UserSharing/UserSharing"));
+const Mentoring = lazy(() => import("../../components/ui/Dashboard/Mentoring/Mentoring"));
+const Meeting = lazy(() => import("../../components/ui/Dashboard/Meeting/Meeting"));
+const Employee = lazy(() => import("../../components/ui/Dashboard/Employee/Employee"));
+const Settings = lazy(() => import("../../components/ui/Dashboard/Settings/Settings"));
+const Dashboard = lazy(() => import("../../components/pages/Dashboard"));
+const Login = lazy(() => import("../../components/pages/Login"));
+const PracticeHome = lazy(() => import("../../components/ui/Dashboard/Meeting/NewAdding/PracticeHome/PracticeHome"));
+const Submissions = lazy(() => import("../../components/ui/Dashboard/Meeting/Submissions/SubmissionPage/Submissions"));
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login/>,
+    element: (
+      <Suspense fallback={<Loader />}>
+      <Login />
+    </Suspense>
+    ),
   },
   {
     path: "dashboard",
-    element: <Dashboard/>,
+    element: (
+      <Suspense fallback={<Loader />}>
+        <Dashboard />
+      </Suspense>
+    ),
     children: [
       {
         path: "home",
-        element: <Home/>,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Home />
+          </Suspense>
+        ),
       },
       {
         path: "usersharing",
-        element: <UserSharing />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <UserSharing />
+          </Suspense>
+        ),
         
       },
       {
         path: "mentoring",
-        element: <Mentoring />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Mentoring />
+          </Suspense>
+        ),
       },
       {
 
         path: "meeting",
-        element: <Meeting/>,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Meeting />
+          </Suspense>
+        ),
         children: [
           {
             path: "managepracticetasks",
-            element: <PracticeHome/>,
+            element: (
+              <Suspense fallback={<Loader />}>
+                <PracticeHome />
+              </Suspense>
+            ),
           },
           {
             path: "submissions",
-            element: <Submissions/>,
-            
+            element: (
+              <Suspense fallback={<Loader />}>
+                <Submissions />
+              </Suspense>
+            ),
           },  
           
         ],
@@ -56,21 +89,37 @@ export const router = createBrowserRouter([
       {
 
         path: "settings",
-        element: <Settings/>,
+        element:(
+          <Suspense fallback={<Loader />}>
+            <Settings />
+          </Suspense>
+        ),
       },
       {
         path: "logout",
-        element: <Logout/>,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Logout />
+          </Suspense>
+        ),
       },
       {
         path: "employee",
-        element: <Employee/>,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Employee />
+          </Suspense>
+        ),
       },
     ],
   },
   {
     path: "managepracticetasks",
-    element: <PracticeHome/>,
+    element: (
+      <Suspense fallback={<Loader />}>
+        <PracticeHome />
+      </Suspense>
+    ),
   },
   
   

@@ -61,15 +61,15 @@ export const Practicewise = ({changePage}) => {
                     <label className="h-[16px]">{item.Num}</label>
                 </h1>
                 
-                <div className="w-auto inline-block  max-w-max h-full flex flex-row py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] items-center gap-[10px] ">
+                <div className="w-[80px] h-full flex flex-row py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] items-center gap-[10px] ">
                     <CgChevronDoubleUp className='h-[20px] w-[20px] text-[#34A853]'/>
                     <label className='w-auto h-[16px] font-[Nunito] font-bold text-[12px] leading-[16px] text-[#8B8B8B]'>{item.score}</label>
                 </div>
-                <div  className="w-auto h-full flex flex-row py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] items-center gap-[10px] ">
+                <div  className="w-[150px] h-full flex flex-row py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] items-center gap-[10px] ">
                     <img src={person} className='h-[20px] w-[20px]'/>
                     <label className='w-auto h-[16px] font-[Nunito] font-bold text-[12px] leading-[16px] text-[#8B8B8B]'>{item.person}</label>
                 </div>
-                <div  className="w-auto h-full flex flex-row py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] items-center gap-[10px] ">
+                <div  className="w-[168px] h-full flex flex-row py-[5px] px-[10px] shadow-inner shadow-[#FFFFFF40] rounded-[7px] items-center gap-[10px] ">
                     <img src={processimg} className='h-[20px] w-[20px]'/>
                     <label className='w-auto h-[16px] font-[Nunito] font-bold text-[12px] leading-[16px] text-[#8B8B8B]'>{item.status}</label>
                 </div>

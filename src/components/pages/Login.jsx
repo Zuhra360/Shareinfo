@@ -1,10 +1,11 @@
 
 import { LoginPage } from '../ui/Login/LoginPage'
 
-export const Login = () => {
+ const Login = () => {
   return (
     <div>
         <LoginPage/>
     </div>
   )
 }
+export default Login;

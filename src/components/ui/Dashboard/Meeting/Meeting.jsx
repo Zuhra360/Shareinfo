@@ -10,12 +10,12 @@ import { Submissions } from "./Submissions/SubmissionPage/Submissions";
 import { Practicewise } from "./LeaderBoard/Practicewise/Practicewise";
 import { WeeklyPage } from "./LeaderBoard/Weekly/WeeklyPage";
 
-export const Meeting = () => {
+ const Meeting = () => {
   const [currentPage, setCurrentPage] = useState('PracticeHome');
-  const [activeButton, setActiveButton] = useState('');
+  // const [activeButton, setActiveButton] = useState('');
   const changePage = (page) => {
     setCurrentPage(page);
-    setActiveButton(page);
+    // setActiveButton(page);
   };
 
   return (
@@ -37,3 +37,4 @@ export const Meeting = () => {
     </div>
   )
 }
+export default Meeting;
